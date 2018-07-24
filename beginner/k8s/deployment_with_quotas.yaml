@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quotas
+  namespace: demo
+  labels:
+    app: quotas
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: quotas
+  template:
+    metadata:
+      labels:
+        app: quotas
+    spec:
+      containers:
+      - name: bash
+        image: bash 
+        resources:
+          requests:
+            memory: "200Mi"
+            cpu: "100m"
+          limits:
+            memory: "300Mi"
+            cpu: "500m"

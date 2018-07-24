@@ -1,4 +1,4 @@
-# Informations
+# Beginner
 
 ## Playgrounds
 
@@ -117,5 +117,15 @@ Files:
 
 ### Ressource-Limits
 
+- [deployment.yaml](k8s/deployment_with_quotas.yaml)
 
 ### Secrets
+
+### Jobs
+
+### CronJobs
+
+### Statefulsets
+
+### Daemonsets
+
