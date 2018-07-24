@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloweb
+  namespace: demo
+  labels:
+    app: hello
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      app: hello
+  template:
+    metadata:
+      labels:
+        app: hello
+    spec:
+      containers:
+      - name: hello-app
+        image: nginxdemos/hello:0.2
+        ports:
+        - name: http
+          containerPort: 9090
+        env:
+          - name: HTTP_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: nginx-config
+                key: http_port
+        volumeMounts:
+          - name: config-volume
+            mountPath: /etc/nginx/
+      volumes:
+        - name: config-volume
+          configMap:
+            name: nginx-config
+            items:
+            - key: nginx.conf
+              path: nginx.conf
