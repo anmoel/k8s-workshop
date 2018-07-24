@@ -6,6 +6,7 @@ metadata:
   labels:
     app: hello
 spec:
+  replicas: 1
   selector: 
     matchLabels:
       app: hello
@@ -16,6 +17,7 @@ spec:
     spec:
       containers:
       - name: hello-app
-        image: gcr.io/google-samples/hello-app:1.0
+        image: nginxdemos/hello:0.1 #tags 0.1 , 0.2 and plain-text available 
         ports:
-        - containerPort: 8080
+        - name: http
+          containerPort: 80
