@@ -115,6 +115,20 @@ Files:
 - `kubectl -n demo get cm nginx-config -o yaml`
 - `kubectl -n demo apply -f k8s/configmap.yaml`
 
+
+### Health Checks
+- 2 catagories:
+  - liveness: importend for container/pod lifecycle
+  - readyness: importend for inclusion in distribution
+- 3 types:
+  - tcp
+  - http
+  - exec
+- files:
+  - [exec](k8s/exec-probe.yaml)
+  - [http_tcp](k8s/deployment_with_probes.yaml)
+
+
 ### Ressource-Limits
 
 - [deployment.yaml](k8s/deployment_with_quotas.yaml)
