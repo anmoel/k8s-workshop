@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kubectl
+  namespace: demo
+  labels:
+    app: kubectl
+spec:
+  template:
+    spec:
+      restartPolicy: OnFailure
+      serviceAccountName: pod-killer
+      containers:
+      - name: kubectl
+        image: lachlanevenson/k8s-kubectl:v1.11.1
+        command: ["kubectl"]
+        args: ["get", "deploy"]
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "100m"
+          limits:
+            memory: "250Mi"
+            cpu: "250m"
