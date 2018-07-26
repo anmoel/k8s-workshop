@@ -6,7 +6,7 @@ metadata:
   labels:
     app: quotas
 spec:
-  replicas: 1
+  replicas: 4
   selector: 
     matchLabels:
       app: quotas
@@ -16,8 +16,8 @@ spec:
         app: quotas
     spec:
       containers:
-      - name: bash
-        image: bash 
+      - name: quotas
+        image: nginxdemos/hello:0.2
         resources:
           requests:
             memory: "200Mi"
