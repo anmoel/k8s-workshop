@@ -10,6 +10,9 @@
 
 ### Secrets
 
+ - secrets in yaml files are base64 encoded
+ - don't save secrets in repos
+
 ### Namespace qoutas
 
 https://kubernetes.io/docs/concepts/policy/resource-quotas/
@@ -20,7 +23,10 @@ A resource quota is enforced in a particular namespace when there is a ResourceQ
 - file: [quotas](k8s/namespace_quotas.yaml)
 - `kubectl -n demo describe quota`
 
+### RBAC
+
 ### Erstellen von CronJobs and Jobs
+
 
 ### Daemonsets
 
@@ -34,7 +40,5 @@ lifecycle
 autoscalierung
 
 ### PodSecurity
-
-### RBAC
 
 ### Helm
