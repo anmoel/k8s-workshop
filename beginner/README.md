@@ -58,6 +58,9 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
   - `kubectl config current-context`
   - `kubectl config set PROPERTY_NAME PROPERTY_VALUE`
   - `kubectl config use-context CONTEXT_NAME`
+  - `kubectl config get-contexts`
+  - `kubectl config set-context demo --user minikube --cluster minikube --namespace demo`
+  - `kubectl config use-context demo`
 - Imperative configuration commands
   - `kubectl run nginx --image nginx` create a deployment 
   - `kubectl expose deploy nginx --port=80 --target-port=8000 --type LoadBalancer` create a service with type LoadBalancer for deployment nginx
