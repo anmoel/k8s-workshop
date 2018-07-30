@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: hello-pod
   labels:
-    app: hello-pod
+    app: hello
 spec:
   containers:
   - name: envar-demo-container
