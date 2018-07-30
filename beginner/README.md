@@ -9,7 +9,7 @@
 
 ### Core-Concepts
 
-Pets vs. Cattles: 
+Pets vs. Cattles:
 https://docs.google.com/presentation/d/1n3avmL5GCYCYJEr8pLFBKe0wzvoOiUV2vxyW_pYFL5s/edit#slide=id.g150f9a02df_1_153
 
 Pods/Labels/Service/Deployment:
@@ -18,7 +18,7 @@ https://docs.google.com/presentation/d/13SsyxNXnb2pB05LOdjtgBNjARD_qw9Dl0FLZeAlQ
 Kubernetes Master /Controlling Components:
 [picture](kubernetes_architecture.png)
 
-Rolling Update: 
+Rolling Update:
 https://docs.google.com/presentation/d/1n3avmL5GCYCYJEr8pLFBKe0wzvoOiUV2vxyW_pYFL5s/edit#slide=id.g150c4c944a_0_2194
 
 ## HandsOn
@@ -36,7 +36,7 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
 #### commands
 
 - minikube (start | stop | status )
-- minikube config 
+- minikube config
   - minikube config view
   - minikube config set cpus 2
   - minikube config set vm-driver kvm # default virtualbox
@@ -55,7 +55,7 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
 - `kubectl help` most important command for beginners
 - `kubectl version` shows version of kubectl and server of current context
 - `kubectl config ...` only configures kubectl, not the k8s server
-  - `kubectl config view` 
+  - `kubectl config view`
   - `kubectl config current-context`
   - `kubectl config set PROPERTY_NAME PROPERTY_VALUE`
   - `kubectl config use-context CONTEXT_NAME`
@@ -63,7 +63,7 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
   - `kubectl config set-context demo --user minikube --cluster minikube --namespace demo`
   - `kubectl config use-context demo`
 - Imperative configuration commands
-  - `kubectl run nginx --image nginx` create a deployment 
+  - `kubectl run nginx --image nginx` create a deployment
   - `kubectl expose deploy nginx --port=80 --target-port=80 --type NodePort` create a service with type NodePort for deployment nginx
   - `kubectl create pod nginx --image nginx` create kubernetes object
   - `kubectl create -f nginx.yaml` create object of yanl/json-file
