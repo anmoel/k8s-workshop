@@ -10,5 +10,5 @@ spec:
     app: hello
   ports:
   - port: 80
-    targetPort: 8080 # or name
+    targetPort: 80 # or name
   type: NodePort #None | ClusterIP | NodePort | Loadbalancer | ExternalName
