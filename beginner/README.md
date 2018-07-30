@@ -39,6 +39,7 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
 - minikube config 
   - minikube config view
   - minikube config set cpus 2
+  - minikube config set vm-driver kvm # default virtualbox
   - minikube config get memory
   - minikube config set memory 4096
 - minikube addons
@@ -63,7 +64,7 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
   - `kubectl config use-context demo`
 - Imperative configuration commands
   - `kubectl run nginx --image nginx` create a deployment 
-  - `kubectl expose deploy nginx --port=80 --target-port=8000 --type LoadBalancer` create a service with type LoadBalancer for deployment nginx
+  - `kubectl expose deploy nginx --port=80 --target-port=80 --type NodePort` create a service with type NodePort for deployment nginx
   - `kubectl create pod nginx --image nginx` create kubernetes object
   - `kubectl create -f nginx.yaml` create object of yanl/json-file
   - `kubectl replace -f nginx.yaml` update ...
