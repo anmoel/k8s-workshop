@@ -1,0 +1,75 @@
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: options-example
+  namespace: demo
+  labels:
+    app: hello
+spec:
+  replicas: 10
+  revisionHistoryLimit: 5 #Default 10
+  strategy: 
+    type: RollingUpdate #Can be "Recreate" or "RollingUpdate". Default is RollingUpdate.
+    rollingUpdate:
+      maxSurge: 3 #Default 25%
+      maxUnavailable: 0 # Default 25%
+  selector: 
+    matchLabels:
+      app: options-example
+  template:
+    metadata:
+      labels:
+        app: options-example
+    spec:
+      PodSecurityContext:
+        runAsNonRoot: true #
+        runAsUser: 1000    #
+        runAsGroup: 1000   # 
+        fsGroup: 1000      #
+      containers:
+      - name: container
+        imagePullPolicy: Always #Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise
+        lifecycle:
+          postStart: {} #Like Probes
+          preStop: {}   #
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            add:  ["NET_RAW"] 
+            #drop:
+          privileged: false
+          readOnlyRootFilesystem: true
+          #runAsGroup, runAsUser, runAsNonRoot
+        image: gcr.io/kuar-demo/kuard-amd64:1
+        resources:
+          requests:
+            memory: "200Mi"
+            cpu: "100m"
+          limits:
+            memory: "300Mi"
+            cpu: "500m"
+        ports:
+        - name: http
+          containerPort: 9090
+        env:
+        - name: HTTP_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: nginx-config
+              key: http_port
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 9090
+            httpHeaders:
+            - name: X-Custom-Header
+              value: Awesome
+          initialDelaySeconds: 3
+          periodSeconds: 3
+        livenessProbe:
+          tcpSocket:
+            port: http
+          initialDelaySeconds: 15
+          periodSeconds: 20

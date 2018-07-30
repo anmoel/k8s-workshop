@@ -1,0 +1,22 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: kubectl
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      restartPolicy: OnFailure
+      serviceAccountName: pod-killer
+      containers:
+      - name: kubectl
+        image: lachlanevenson/k8s-kubectl:v1.11.1
+        command: ["kubectl"]
+        args: ["get", "pod"]
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "100m"
+          limits:
+            memory: "250Mi"
+            cpu: "250m"

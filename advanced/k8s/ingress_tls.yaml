@@ -1,0 +1,11 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: helloweb-tls
+  namespace: demo
+spec:
+  tls:
+  - secretName: ingress-tls
+  backend:
+    serviceName: helloweb
+    servicePort: 80

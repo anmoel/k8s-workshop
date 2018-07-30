@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloweb
+  namespace: demo
+  labels:
+    app: hello
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      app: hello
+  template:
+    metadata:
+      labels:
+        app: hello
+    spec:
+      containers:
+      - name: hello-app
+        image: nginxdemos/hello:0.2
+        resources:
+          requests:
+            memory: "200Mi"
+            cpu: "100m"
+          limits:
+            memory: "300Mi"
+            cpu: "500m"
+        ports:
+        - name: http
+          containerPort: 9090
+        env:
+        - name: HTTP_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: nginx-config
+              key: http_port
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 9090
+            httpHeaders:
+            - name: X-Custom-Header
+              value: Awesome
+          initialDelaySeconds: 3
+          periodSeconds: 3
+        livenessProbe:
+          tcpSocket:
+            port: http
+          initialDelaySeconds: 15
+          periodSeconds: 20
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/nginx/
+      volumes:
+      - name: config-volume
+        configMap:
+          name: nginx-config
+          items:
+          - key: nginx.conf
+            path: nginx.conf

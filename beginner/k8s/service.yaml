@@ -11,4 +11,4 @@ spec:
   ports:
   - port: 80
     targetPort: 8080 # or name
-  type: ClusterIP #None | ClusterIP | NodePort | Loadbalancer | ExternalName
+  type: NodePort #None | ClusterIP | NodePort | Loadbalancer | ExternalName
