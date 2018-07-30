@@ -53,17 +53,26 @@ example:
 https://blog.ptrk.io/how-to-deploy-an-efk-stack-to-kubernetes/
 https://github.com/pires/kubernetes-elasticsearch-cluster
 
-kubectl create -f k8s/elk/es-discovery-svc.yaml
-kubectl create -f k8s/elk/es-svc.yaml
-kubectl create -f k8s/elk/es-master.yaml
+kubectl create ns logging
+kubectl apply -f k8s/elk/es-discovery-svc.yaml
+kubectl apply -f k8s/elk/es-svc.yaml
+kubectl apply -f k8s/elk/es-master.yaml
 kubectl rollout status -f k8s/elk/es-master.yaml
 
-kubectl create -f k8s/elk/es-ingest-svc.yaml
-kubectl create -f k8s/elk/es-ingest.yaml
+kubectl apply -f k8s/elk/es-ingest-svc.yaml
+kubectl apply -f k8s/elk/es-ingest.yaml
 kubectl rollout status -f k8s/elk/es-ingest.yaml
 
-kubectl create -f k8s/elk/es-data-stateful.yaml
+kubectl apply -f k8s/elk/es-data-stateful.yaml
 kubectl rollout status -f k8s/elk/es-data-stateful.yaml
+
+kubectl apply -f k8s/elk/kibana-svc.yaml -f k8s/elk/kibana.yaml
+kubectl rollout status -f k8s/elk/kibana.yaml
+
+kubectl apply -f k8s/elk/fluentd.yaml
+kubectl rollout status -f k8s/elk/fluentd.yaml
+
+kubectl apply -f k8s/elk/es-curator-config.yaml -f k8s/elk/es-curator_v1beta1.yaml
 
 ### Deployment options and PodSecurity
 
@@ -84,12 +93,11 @@ https://docs.helm.sh/using_helm/
 - helm inspect chart stable/wordpress
 - helm install stable/wordpress
 
-
 ### other Stuff
 
+- HA Master
 - Storage Classes
 - Autoscaling
-- HA Master
 - Network Policies
 - PodSecurityPolicy
 
