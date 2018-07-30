@@ -4,8 +4,16 @@
 
 ### Install with kubeadm
 
-- kubeadm init
+- [kubernetes setup](https://kubernetes.io/docs/setup/)
+- kubeadm init --kubernetes-version 
+- kubeadm config print-default
+- [kubeadm.conf](kubeadm.conf)
+- kubeadm token create
+- kubeadm token list 
 - kubeadm join ....
+- install network interface 
+- [install metric-server](https://kubernetes.io/docs/tasks/debug-application-cluster/core-metrics-pipeline/)
+- [install dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
 
 ### Secrets
 
