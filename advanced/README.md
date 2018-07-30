@@ -1,6 +1,6 @@
 # Advanced
 
-## HandsOn:
+## HandsOn
 
 ### Install with kubeadm
 
@@ -21,6 +21,7 @@
   - ServiceAccountToken
 
 example with ingress in minikube:
+
 - `minikube addons enable ingress`
 - `openssl req -nodes -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365`
 - `kubectl create secret tls ingress-tls --cert=cert.pem --key=key.pem -o yaml`
@@ -47,6 +48,7 @@ A resource quota is enforced in a particular namespace when there is a ResourceQ
 - [cronjob](k8s/cronjob.yaml)
 
 ### Statefulset and Daemonset with ELK-Example
+
 example:
 https://blog.ptrk.io/how-to-deploy-an-efk-stack-to-kubernetes/
 https://github.com/pires/kubernetes-elasticsearch-cluster
@@ -66,14 +68,16 @@ kubectl rollout status -f k8s/elk/es-data-stateful.yaml
 ### Deployment options and PodSecurity
 
 - [deployment](k8s/deployment_all.yaml)
-- commands: 
+- commands:
   - man capabilities
   - grep CapE /proc/self/status 
   - capsh --decode=00000000a80425fb
 
 ### Helm
+
 https://docs.helm.sh/using_helm/
-- curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash 
+
+- curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
 - helm init
 - helm repo update
 - helm seach wordpress
@@ -95,4 +99,4 @@ https://docs.helm.sh/using_helm/
 - Taints and Tolerations
 - PodDisruptionBudget
 - PriorityClasses
-...
+- ...
