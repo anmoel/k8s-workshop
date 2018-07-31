@@ -3,15 +3,17 @@
 ## HandsOn
 
 ### Install with kubeadm
+- terraform plan -auto-approve -var lab_vm_name=k8s-workshop-master -var lab_vm_cpu_count=1 -var lab_vm_memory=1024 -var vsphere_template=centos7-kubernetes-template -var lab_vm_count=1
+- terraform plan -auto-approve -var lab_vm_name=k8s-workshop-slave -var lab_vm_cpu_count=1 -var lab_vm_memory=4096 -var vsphere_template=centos7-kubernetes-template -var lab_vm_count=2
 
 - [kubernetes setup](https://kubernetes.io/docs/setup/)
-- kubeadm init --kubernetes-version 
+- kubeadm init
 - kubeadm config print-default
 - [kubeadm.conf](kubeadm.conf)
 - kubeadm token create
 - kubeadm token list 
 - kubeadm join ....
-- install network interface 
+- [install network interface](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/)
 - [install metric-server](https://kubernetes.io/docs/tasks/debug-application-cluster/core-metrics-pipeline/)
 - [install dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
 
@@ -55,7 +57,7 @@ A resource quota is enforced in a particular namespace when there is a ResourceQ
 - [job-with-rbac](k8s/job_rbac.yaml)
 - [cronjob](k8s/cronjob.yaml)
 
-### Statefulset and Daemonset with ELK-Example
+### Statefulset and Daemonset with EFK-Example
 
 example:
 https://blog.ptrk.io/how-to-deploy-an-efk-stack-to-kubernetes/
