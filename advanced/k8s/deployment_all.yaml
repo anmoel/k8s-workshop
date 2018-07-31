@@ -1,10 +1,7 @@
-
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: options-example
-  namespace: demo
   labels:
     app: hello
 spec:
@@ -23,25 +20,34 @@ spec:
       labels:
         app: options-example
     spec:
-      PodSecurityContext:
-        runAsNonRoot: true #
+      securityContext:
+        runAsNonRoot: true # can override in container context
         runAsUser: 1000    #
         runAsGroup: 1000   # 
         fsGroup: 1000      #
       containers:
       - name: container
         imagePullPolicy: Always #Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise
-        lifecycle:
-          postStart: {} #Like Probes
-          preStop: {}   #
+        lifecycle:         #Like Probes
+          postStart:
+            httpGet:
+              host: 127.0.0.1
+              port: 8080
+              path: /
+              httpHeaders:
+              - name: Content-Type
+                value: application/json
+          preStop: 
+            exec:
+              command: ["echo", "'Pod startet'"]
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:
             add:  ["NET_RAW"] 
-            #drop:
+            drop: ["NET_ADMIN"]
           privileged: false
           readOnlyRootFilesystem: true
-          #runAsGroup, runAsUser, runAsNonRoot
+          #runAsGroup, runAsUser, runAsNonRoot also possible
         image: gcr.io/kuar-demo/kuard-amd64:1
         resources:
           requests:
@@ -52,17 +58,13 @@ spec:
             cpu: "500m"
         ports:
         - name: http
-          containerPort: 9090
-        env:
-        - name: HTTP_PORT
-          valueFrom:
-            configMapKeyRef:
-              name: nginx-config
-              key: http_port
+          containerPort: 8080
+        - name: https
+           containerPort: 8443
         readinessProbe:
           httpGet:
             path: /
-            port: 9090
+            port: http
             httpHeaders:
             - name: X-Custom-Header
               value: Awesome
