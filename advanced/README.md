@@ -12,6 +12,8 @@
 - kubeadm token list 
 - kubeadm join ....
 - [install network interface](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/)
+- kubectl create ns demo
+optional:
 - [install metric-server](https://kubernetes.io/docs/tasks/debug-application-cluster/core-metrics-pipeline/)
 - [install dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
 
@@ -84,7 +86,7 @@ kubectl apply -f k8s/elk/es-curator-config.yaml -f k8s/elk/es-curator_v1beta1.ya
 
 ### Deployment options and PodSecurity
 
-- [deployment](k8s/deployment_all.yaml)
+- [deployment](k8s/options_example.yaml)
 - commands:
   - man capabilities
   - grep CapE /proc/self/status 
