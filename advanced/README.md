@@ -48,16 +48,7 @@ A resource quota is enforced in a particular namespace when there is a ResourceQ
 - file: [quotas](k8s/namespace_quotas.yaml)
 - `kubectl -n demo describe quota`
 
-### RBAC
-
-- [rbac-clusterrole](k8s/rbac.yaml)
-
-### Erstellen von CronJobs and Jobs
-
-- [job-with-rbac](k8s/job_rbac.yaml)
-- [cronjob](k8s/cronjob.yaml)
-
-### Statefulset and Daemonset with EFK-Example
+### Statefulset, Daemonset and CronJob with EFK-Example
 
 example:
 https://blog.ptrk.io/how-to-deploy-an-efk-stack-to-kubernetes/
@@ -91,30 +82,3 @@ kubectl apply -f k8s/elk/es-curator-config.yaml -f k8s/elk/es-curator_v1beta1.ya
   - man capabilities
   - grep CapE /proc/self/status 
   - capsh --decode=00000000a80425fb
-
-### Helm
-
-https://docs.helm.sh/using_helm/
-
-- curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
-- helm init
-- helm repo update
-- helm search wordpress
-- helm inspect chart stable/wordpress
-- helm install stable/wordpress
-
-### other Stuff
-
-- HA Master
-- Storage Classes
-- Autoscaling
-- Network Policies
-- PodSecurityPolicy
-
-- Podtemplate -DNS Policy
-- Podtemplate- Affinity
-- Podtemplate - TerminationMessage
-- Taints and Tolerations
-- PodDisruptionBudget
-- PriorityClasses
-- ...
