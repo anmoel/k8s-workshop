@@ -3,8 +3,6 @@
 ## HandsOn
 
 ### Install with kubeadm
-- terraform plan -auto-approve -var lab_vm_name=k8s-workshop-master -var lab_vm_cpu_count=1 -var lab_vm_memory=1024 -var vsphere_template=centos7-kubernetes-template -var lab_vm_count=1
-- terraform plan -auto-approve -var lab_vm_name=k8s-workshop-slave -var lab_vm_cpu_count=1 -var lab_vm_memory=4096 -var vsphere_template=centos7-kubernetes-template -var lab_vm_count=2
 
 - [kubernetes setup](https://kubernetes.io/docs/setup/)
 - kubeadm init
@@ -99,7 +97,7 @@ https://docs.helm.sh/using_helm/
 - curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
 - helm init
 - helm repo update
-- helm seach wordpress
+- helm search wordpress
 - helm inspect chart stable/wordpress
 - helm install stable/wordpress
 
