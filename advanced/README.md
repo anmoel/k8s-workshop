@@ -5,17 +5,24 @@
 ### Install with kubeadm
 
 - [kubernetes setup](https://kubernetes.io/docs/setup/)
-- kubeadm init
-- kubeadm config print-default
-- [kubeadm.conf](kubeadm.conf)
-- kubeadm token create
-- kubeadm token list 
-- kubeadm join ....
+- `kubeadm init` output the kubeadm join command
+  - `kubeadm config print-default`
+  - [kubeadm.conf](kubeadm.conf)
+  - `kubeadm init --config kubeadm.conf`
+  - `kubeadm init --pod-network-cidr=10.244.0.0/16`
+- `kubeadm token create` on master
+- `kubeadm token list` on master to get <TOKEN>
+- `openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'` on master to get <CAHASH>
+- `kubeadm join --token <TOKEN> 10.128.0.3:6443 --discovery-token-ca-cert-hash sha256:<CAHASH>` 
 - [install network interface](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/)
-- kubectl create ns demo
+  - `kubectl apply -f https://docs.projectcalico.org/v3.1/getting-started/kubernetes/installation/hosted/canal/rbac.yaml`
+  - `kubectl apply -f https://docs.projectcalico.org/v3.1/getting-started/kubernetes/installation/hosted/canal/canal.yaml`
+- `kubectl create ns demo`
 optional:
 - [install metric-server](https://kubernetes.io/docs/tasks/debug-application-cluster/core-metrics-pipeline/)
 - [install dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
+  - `kubectl proxy`
+  - [Dashboard Url with kubectl proxy](http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/)
 
 ### Secrets
 
