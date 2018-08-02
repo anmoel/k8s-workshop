@@ -21,6 +21,8 @@ Kubernetes Master /Controlling Components:
 Rolling Update:
 https://docs.google.com/presentation/d/1n3avmL5GCYCYJEr8pLFBKe0wzvoOiUV2vxyW_pYFL5s/edit#slide=id.g150c4c944a_0_2194
 
+[Kubernetes DeveloperTeams (SIG)](https://github.com/kubernetes/community/blob/master/sig-list.md)
+
 ## HandsOn
 
 ### Installation kubectl
