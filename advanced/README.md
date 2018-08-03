@@ -18,7 +18,9 @@
   - `kubectl apply -f https://docs.projectcalico.org/v3.1/getting-started/kubernetes/installation/hosted/canal/rbac.yaml`
   - `kubectl apply -f https://docs.projectcalico.org/v3.1/getting-started/kubernetes/installation/hosted/canal/canal.yaml`
 - `kubectl create ns demo`
+
 optional:
+
 - [install metric-server](https://kubernetes.io/docs/tasks/debug-application-cluster/core-metrics-pipeline/)
 - [install dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
   - `kubectl proxy`
