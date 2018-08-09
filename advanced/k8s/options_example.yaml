@@ -60,7 +60,7 @@ spec:
         - name: http
           containerPort: 8080
         - name: https
-           containerPort: 8443
+          containerPort: 8443
         readinessProbe:
           httpGet:
             path: /
