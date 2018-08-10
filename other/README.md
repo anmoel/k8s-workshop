@@ -5,6 +5,8 @@
 
 - Kubernetes clusters have to types of users service accounts and normal users , but normal users are assumed to be managed by an outside service.
 - [rbac-clusterrole](k8s/rbac.yaml)
+- kubectl auth can-i COMMAND OBJECTCLASS
+  - `kubectl auth can-i create deployments --as bob --namespace developer`
 
 ## Erstellen von CronJobs and Jobs
 
