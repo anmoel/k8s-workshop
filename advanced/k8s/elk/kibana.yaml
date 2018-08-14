@@ -20,9 +20,9 @@ spec:
         image: docker.elastic.co/kibana/kibana-oss:6.3.0
         env:
         - name: CLUSTER_NAME
-          value: myesdb
+          value: elasticsearch
         - name: SERVER_BASEPATH
-          value: "/"  # if no Loadbalancer oder NodePort: /api/v1/namespaces/default/services/kibana:http/proxy
+          value: ""  # if no Loadbalancer oder NodePort: /api/v1/namespaces/default/services/kibana:http/proxy
         resources:
           limits:
             cpu: 1000m
