@@ -63,6 +63,7 @@ example:
 https://blog.ptrk.io/how-to-deploy-an-efk-stack-to-kubernetes/
 https://github.com/pires/kubernetes-elasticsearch-cluster
 
+```bash
 kubectl create ns logging
 kubectl apply -f k8s/elk/es-discovery-svc.yaml
 kubectl apply -f k8s/elk/es-svc.yaml
@@ -83,6 +84,7 @@ kubectl apply -f k8s/elk/fluentd.yaml
 kubectl rollout status -f k8s/elk/fluentd.yaml
 
 kubectl apply -f k8s/elk/es-curator-config.yaml -f k8s/elk/es-curator_v1beta1.yaml
+```
 
 ### Deployment options and PodSecurity
 
