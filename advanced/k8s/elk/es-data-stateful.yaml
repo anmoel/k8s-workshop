@@ -75,9 +75,9 @@ spec:
         - name: storage
           mountPath: /data
       volumes:
-          - emptyDir:
-              medium: ""
-            name: storage
+      - emptyDir:
+          medium: ""
+        name: storage
 #  volumeClaimTemplates:
 #  - metadata:
 #      name: storage
