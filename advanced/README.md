@@ -9,7 +9,7 @@
   - `kubeadm config print-default`
   - [kubeadm.conf](kubeadm.conf)
   - `kubeadm init --config kubeadm.conf`
-  - `kubeadm init --pod-network-cidr=10.244.0.0/16`
+  - `kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=PUBLICIP`
 - `kubeadm token create` on master
 - `kubeadm token list` on master to get <TOKEN>
 - `openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'` on master to get <CAHASH>
