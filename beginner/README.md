@@ -39,7 +39,7 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
 
 ### Minikube configuration
 
-#### commands
+#### minikube commands
 
 - minikube (start | stop | status )
 - minikube config
@@ -56,7 +56,7 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
 
 ### Kubectl configuration and usage
 
-#### commands
+#### kubectl commands
 
 - `kubectl help` most important command for beginners
 - `kubectl version` shows version of kubectl and server of current context
