@@ -11,10 +11,10 @@ metadata:
   namespace: demo
 spec:
   hard:
-    pods: "4"
+    pods: "6"
     requests.cpu: "1"
     requests.memory: 1Gi
-    limits.cpu: "2"
+    limits.cpu: "4"
     limits.memory: 2Gi
 #    requests.nvidia.com/gpu: 4
 
@@ -29,7 +29,7 @@ spec:
   hard:
     configmaps: "10"
     persistentvolumeclaims: "4"
-    replicationcontrollers: "20"
+    replicationcontrollers: "0"
     secrets: "10"
     services: "10"
     services.loadbalancers: "2"
