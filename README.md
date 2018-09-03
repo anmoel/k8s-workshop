@@ -1,6 +1,6 @@
 # k8s-workshop
 
-## 1. Kubernetes Beginner:
+## 1. Kubernetes Beginner Tag1
 
 Themen:
 ---
@@ -29,7 +29,7 @@ Voraussetzung:
 
 ---------------------------------------------------------------------
 
-## 2. Kubernetes Advanced
+## 2. Kubernetes Beginner Tag2
 
 Themen:
 ---
@@ -51,3 +51,10 @@ Voraussetzung:
 
 - Grundkenntnisse von Kubernetes
 - Kubernetes-Cluster in der Cloud oder Minikube installiert
+
+
+
+
+## Other
+
+[siehe hier](other/README.md)

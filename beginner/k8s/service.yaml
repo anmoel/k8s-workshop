@@ -10,5 +10,11 @@ spec:
     app: hello
   ports:
   - port: 80
+    nodePort: 31000
+    name: http
     targetPort: 80 # or name
-  type: NodePort #None | ClusterIP | NodePort | Loadbalancer | ExternalName
+  - port: 443
+    nodePort: 31001
+    name: https
+    targetPort: https
+  type: LoadBalancer #None | ClusterIP | NodePort | Loadbalancer | ExternalName
