@@ -7,8 +7,8 @@ Themen:
 
 - Vorstellung:
 
-    - Core Konzepte
-    - Master Aufbau
+    - Core Concepts
+    - Master Components
 
 - HandsOn:
 
@@ -16,7 +16,7 @@ Themen:
     - Minikube configuration
     - Kubectl configuration and usage
     - Start with Deployments/Pods (Container) and Services
-    - get status of Deployments/Pods
+    - Get status of Deployments/Pods
     - Rolling-Update
     - Rollback
     - Configmaps
@@ -37,7 +37,7 @@ Themen:
 ---
 - Vorstellung:
 
-    - Aufbau HA Kubernetes Cluster
+    - HA Kubernetes Cluster
 
 - HandsOn:
 
