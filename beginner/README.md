@@ -83,7 +83,7 @@ link:
 - https://kubernetes.io/docs/concepts/overview/object-management-kubectl/overview/
 - https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl/
 
-### Start eines Deployments/Pods (Container) und seinem Service
+### start with Deployments/Pods (Container) and Services
 
 Files:
 
@@ -92,7 +92,7 @@ Files:
 - [deployment.yaml](k8s/deployment.yaml)
 - [service.yaml](k8s/service.yaml)
 
-### Ermitteln des Status eines Deployments/Pods
+### get status of Deployments/Pods
 
 - `kubectl get (TYPE [NAME | -l label] | TYPE/NAME ...)`
 - `kubectl describe (-f FILENAME | TYPE [NAME_PREFIX | -l label] | TYPE/NAME)`
@@ -115,7 +115,7 @@ Files:
 - `kubectl rollout undo TYPE NAME`
 - `kubectl rollout undo TYPE NAME --revision=NUMBER`
 
-### Übergabe von Configs in den Container
+### Configmaps
 
 - `kubectl create configmap MAP_NAME DATASOURCE`
 - DATASOURCES :

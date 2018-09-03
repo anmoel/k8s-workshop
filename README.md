@@ -12,20 +12,22 @@ Themen:
 
 - HandsOn:
 
-    - Installation Minikube
-    - Start eines Deployments/Pods (Container) und seinem Service
-    - Ermitteln des Status eines Deployments/Pods
-    - Übergabe von Configs in den Container
+    - Installation kubectl & Minikube
+    - Minikube configuration
+    - Kubectl configuration and usage
+    - Start with Deployments/Pods (Container) and Services
+    - get status of Deployments/Pods
     - Rolling-Update
     - Rollback
-    - Resource Limits
+    - Configmaps
+    - Health checks
+    - Ressource-Limits
+
 
 Voraussetzung:
 ---
 
 - Verständnis von Docker
-
-
 
 ---------------------------------------------------------------------
 
@@ -39,12 +41,11 @@ Themen:
 
 - HandsOn:
 
-    - Deployment erweitern mit HealthChecks
-    - Erstellen von CronJobs and Jobs
+    - Install with kubeadm
+    - Namespace Quotas
     - Secrets
-    - Statefulset mit PersistentVolume
-    - PodSecurity
-    - RBAC
+    - Statefulset, Daemonset and CronJob with EFK-Example
+    - Deployment options and PodSecurity
 
 Voraussetzung:
 ---
@@ -52,8 +53,7 @@ Voraussetzung:
 - Grundkenntnisse von Kubernetes
 - Kubernetes-Cluster in der Cloud oder Minikube installiert
 
-
-
+---------------------------------------------------------------------
 
 ## Other
 
