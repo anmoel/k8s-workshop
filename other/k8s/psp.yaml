@@ -16,8 +16,10 @@ spec:
     - 'downwardAPI'
     - 'projected'
     - 'persistentVolumeClaim'
-  DefaultAddCapabilities:
-  - 'NET_RAW'
+  AllowedCapabilities:
+  - 'NET_RAW'           # add possibiltiy to ping
+  - 'NET_BIND_SERVICE'  # add possibility to open ports below 1024
+  DefaultAddCapabilities: # automaticaly add capabilities to pods
   - 'NET_BIND_SERVICE'
   hostNetwork: false
   hostIPC: false
