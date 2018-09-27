@@ -7,6 +7,8 @@ metadata:
 spec:
   privileged: false
   allowPrivilegeEscalation: false
+  runAsUser:
+    rule: 'MustRunAsNonRoot'
   volumes:
     - 'configMap'
     - 'emptyDir'
@@ -20,5 +22,3 @@ spec:
   hostNetwork: false
   hostIPC: false
   hostPID: false
-  runAsUser:
-    rule: 'MustRunAsNonRoot'
