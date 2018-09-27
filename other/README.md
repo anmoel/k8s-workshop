@@ -36,13 +36,17 @@ https://docs.helm.sh/using_helm/
   - find / -name "*scheduler*log"
   - find / -name "*controller-manager*log"
 
+## PodSecurityPolicy
+
+ [psp.yaml](k8s/psp.yaml)
+ [capabilities](http://man7.org/linux/man-pages/man7/capabilities.7.html)
+
 ## To Create Informations
 - HA Master
 - Volumes, PersistentVolumes, StorageClasses
 - Users, Groups, Login, RBAC advanced
 - Autoscaling
 - Network Policies
-- PodSecurityPolicy
 - CustomResources
 
 - Podtemplate -DNS Policy
