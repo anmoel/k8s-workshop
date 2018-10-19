@@ -60,8 +60,8 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
 
 ```bash
 export https_proxy=...
-export no_proxy=192.168.99.0/24
 minikube start --docker-env http_proxy=$https_proxy --docker-env https_proxy=$https_proxy --docker-env no_proxy=192.168.99.0/24
+export no_proxy=$no_proxy,$(minikube ip)
 kubectl get nodes
 ```
 
@@ -69,8 +69,10 @@ kubectl get nodes
 
 ```cmd
 set https_proxy=...
-set no_proxy=192.168.99.0/24
 minikube-windows-amd64.exe start --docker-env http_proxy=%https_proxy% --docker-env https_proxy=%https_proxy% --docker-env no_proxy=192.168.99.0/24
+application arg0 arg1 > temp.txt
+set /p no_proxy=%no_proxy%,<temp.txt
+del temp.txt
 kubectl.exe get nodes
 ```
 
