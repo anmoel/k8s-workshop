@@ -54,6 +54,26 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
   - minikube addons disable NAME
 - minikube dashboard
 
+### Minikube and kubectl behind a proxy
+
+#### linux
+
+```bash
+export https_proxy=...
+export no_proxy=192.168.99.0/24
+minikube start --docker-env http_proxy=$https_proxy --docker-env https_proxy=$https_proxy --docker-env no_proxy=192.168.99.0/24
+kubectl get nodes
+```
+
+#### windows
+
+```cmd
+set https_proxy=...
+set no_proxy=192.168.99.0/24
+minikube-windows-amd64.exe start --docker-env http_proxy=%https_proxy% --docker-env https_proxy=%https_proxy% --docker-env no_proxy=192.168.99.0/24
+kubectl.exe get nodes
+```
+
 ### Kubectl configuration and usage
 
 #### kubectl commands
