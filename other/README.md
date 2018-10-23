@@ -41,6 +41,17 @@ https://docs.helm.sh/using_helm/
  [psp.yaml](k8s/psp.yaml)
  [capabilities](http://man7.org/linux/man-pages/man7/capabilities.7.html)
 
+## Horizontal Pod Autoscaler (HPA)
+
+- first: we need a metric server.
+  - minikube: `minikube addons enable metrics-server`
+- [deployment-example](k8s/hpa-deployment.yaml)
+- deploy hpa
+  - `kubectl -n demo  autoscale deployment php --cpu-percent=50 --min=1 --max=10`
+  - [hpa.yaml](k8s/hpa.yaml)
+- generate load
+  - `while true; do wget -q  -O- http://$(minikube ip):31080 ; done`
+
 ## To Create Informations
 - HA Master
 - Volumes, PersistentVolumes, StorageClasses
