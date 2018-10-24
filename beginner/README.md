@@ -2,28 +2,28 @@
 
 ## Playgrounds
 
-- http://labs.play-with-k8s.com/
-- https://www.katacoda.com/courses/kubernetes/playground
+- [play-with-k8s.com](http://labs.play-with-k8s.com/)
+- [katacoda](https://www.katacoda.com/courses/kubernetes/playground)
 
 ## Lecture
 
 ### Core-Concepts
 
 Comic:
-https://cloud.google.com/kubernetes-engine/kubernetes-comic/
+[kubernetes-comic](https://cloud.google.com/kubernetes-engine/kubernetes-comic/)
 
 Pets vs. Cattles:
-https://docs.google.com/presentation/d/1n3avmL5GCYCYJEr8pLFBKe0wzvoOiUV2vxyW_pYFL5s/edit#slide=id.g150f9a02df_1_153
+[pets vs. cattles](https://docs.google.com/presentation/d/1n3avmL5GCYCYJEr8pLFBKe0wzvoOiUV2vxyW_pYFL5s/edit#slide=id.g150f9a02df_1_153)
 
 Pods/Labels/Service/Deployment:
-https://docs.google.com/presentation/d/13SsyxNXnb2pB05LOdjtgBNjARD_qw9Dl0FLZeAlQbKA/edit#slide=id.g140f7f2b87_0_0
+[presentation](https://docs.google.com/presentation/d/13SsyxNXnb2pB05LOdjtgBNjARD_qw9Dl0FLZeAlQbKA/edit#slide=id.g140f7f2b87_0_0)
 [picture_of_pod](pod.png)
 
 Kubernetes Master /Controlling Components:
 [picture_k8s_architecture](kubernetes_architecture.png)
 
 Rolling Update:
-https://docs.google.com/presentation/d/1n3avmL5GCYCYJEr8pLFBKe0wzvoOiUV2vxyW_pYFL5s/edit#slide=id.g150c4c944a_0_2194
+[rolling update presentation](https://docs.google.com/presentation/d/1n3avmL5GCYCYJEr8pLFBKe0wzvoOiUV2vxyW_pYFL5s/edit#slide=id.g150c4c944a_0_2194)
 
 [Kubernetes DeveloperTeams (SIG)](https://github.com/kubernetes/community/blob/master/sig-list.md)
 
@@ -31,11 +31,11 @@ https://docs.google.com/presentation/d/1n3avmL5GCYCYJEr8pLFBKe0wzvoOiUV2vxyW_pYF
 
 ### Installation kubectl
 
-https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl
+[install kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl)
 
 ### Installation Minikube
 
-https://kubernetes.io/docs/tasks/tools/install-minikube/
+[install minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
 
 ### Minikube configuration
 
@@ -102,8 +102,7 @@ kubectl.exe get nodes
 
 link:
 
-- https://kubernetes.io/docs/concepts/overview/object-management-kubectl/overview/
-- https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl/
+- [Kubernetes Object Management](https://kubernetes.io/docs/concepts/overview/object-management-kubectl/overview/)
 
 ### start with Deployments/Pods (Container) and Services
 
