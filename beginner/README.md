@@ -25,7 +25,10 @@ Kubernetes Master /Controlling Components:
 Rolling Update:
 [rolling update presentation](https://docs.google.com/presentation/d/1n3avmL5GCYCYJEr8pLFBKe0wzvoOiUV2vxyW_pYFL5s/edit#slide=id.g150c4c944a_0_2194)
 
+other stuff:
 [Kubernetes DeveloperTeams (SIG)](https://github.com/kubernetes/community/blob/master/sig-list.md)
+[tgik youtube channel](https://github.com/heptio/tgik)
+[Kelsey hightower - kubernetes the hard way](https://github.com/kelseyhightower/kubernetes-the-hard-way)
 
 ## HandsOn
 
