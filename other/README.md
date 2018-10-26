@@ -50,7 +50,7 @@ https://docs.helm.sh/using_helm/
   - `kubectl -n demo  autoscale deployment php --cpu-percent=50 --min=1 --max=10`
   - [hpa.yaml](k8s/hpa.yaml)
 - generate load
-  - `while true; do wget -q  -O- http://35.224.15.85 ; done`
+  - `while true; do wget -q  -O- http://$(minikube ip):31080 ; done`
 
 ## To Create Informations
 - HA Master
