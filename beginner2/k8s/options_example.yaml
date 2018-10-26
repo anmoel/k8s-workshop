@@ -7,12 +7,12 @@ metadata:
 spec:
   replicas: 10
   revisionHistoryLimit: 5 #Default 10
-  strategy: 
+  strategy:
     type: RollingUpdate #Can be "Recreate" or "RollingUpdate". Default is RollingUpdate.
     rollingUpdate:
       maxSurge: 3 #Default 25%
       maxUnavailable: 0 # Default 25%
-  selector: 
+  selector:
     matchLabels:
       app: options-example
   template:
@@ -23,7 +23,7 @@ spec:
       securityContext:
         runAsNonRoot: true # can override in container context
         runAsUser: 1000    #
-        runAsGroup: 1000   # 
+        runAsGroup: 1000   #
         fsGroup: 1000      #
       containers:
       - name: container
@@ -37,13 +37,13 @@ spec:
               httpHeaders:
               - name: Content-Type
                 value: application/json
-          preStop: 
+          preStop:
             exec:
               command: ["echo", "'Pod startet'"]
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:
-            add:  ["NET_RAW"] 
+            add:  ["NET_RAW"]
             drop: ["NET_ADMIN"]
           privileged: false
           readOnlyRootFilesystem: true

@@ -5,11 +5,9 @@ metadata:
   namespace: logging
   labels:
     component: elasticsearch
-    role: data
 spec:
   selector:
     component: elasticsearch
-    role: data
   ports:
   - name: http
     port: 9200
