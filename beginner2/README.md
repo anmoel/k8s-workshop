@@ -13,7 +13,7 @@
 - `kubeadm token create` on master
 - `kubeadm token list` on master to get <TOKEN>
 - `openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'` on master to get <CAHASH>
-- `kubeadm join --token <TOKEN> 10.128.0.3:6443 --discovery-token-ca-cert-hash sha256:<CAHASH>` 
+- `kubeadm join --token <TOKEN> 10.128.0.3:6443 --discovery-token-ca-cert-hash sha256:<CAHASH>`
 - [install network interface](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/)
   - `kubectl apply -f https://docs.projectcalico.org/v3.1/getting-started/kubernetes/installation/hosted/canal/rbac.yaml`
   - `kubectl apply -f https://docs.projectcalico.org/v3.1/getting-started/kubernetes/installation/hosted/canal/canal.yaml`
@@ -66,11 +66,13 @@ https://github.com/pires/kubernetes-elasticsearch-cluster
 ```bash
 kubectl create ns logging
 kubectl apply -f k8s/elk/es-discovery-svc.yaml
+kubectl apply -f k8s/elk/es-data-svc.yaml
 kubectl apply -f k8s/elk/es-svc.yaml
+kubectl apply -f k8s/elk/es-ingest-svc.yaml
+
 kubectl apply -f k8s/elk/es-master.yaml
 kubectl rollout status -f k8s/elk/es-master.yaml
 
-kubectl apply -f k8s/elk/es-ingest-svc.yaml
 kubectl apply -f k8s/elk/es-ingest.yaml
 kubectl rollout status -f k8s/elk/es-ingest.yaml
 
@@ -91,5 +93,19 @@ kubectl apply -f k8s/elk/es-curator-config.yaml -f k8s/elk/es-curator_v1beta1.ya
 - [deployment](k8s/options_example.yaml)
 - commands:
   - man capabilities
-  - grep CapE /proc/self/status 
+  - grep CapE /proc/self/status
   - capsh --decode=00000000a80425fb
+
+### maintenance
+
+- set node into maintenance and move all pods away
+
+  ```bash
+  kubectl drain NODE --ignore-daemonsets --ignore-local-storage
+  ```
+
+- set node available for pods
+
+  ```bash
+  kubectl uncordon NODE
+  ```
