@@ -11,6 +11,7 @@
   - `kubeadm init --config kubeadm.conf`
   - `kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=PUBLICIP`
 - `kubeadm token create` on master
+- `kubeadm token create --print-join-command` on master to get join command or
 - `kubeadm token list` on master to get <TOKEN>
 - `openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'` on master to get <CAHASH>
 - `kubeadm join --token <TOKEN> 10.128.0.3:6443 --discovery-token-ca-cert-hash sha256:<CAHASH>`
