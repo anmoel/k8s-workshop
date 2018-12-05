@@ -7,7 +7,7 @@ metadata:
     app: hello
 spec:
   replicas: 1
-  selector: 
+  selector:
     matchLabels:
       app: hello
   template:
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: hello-app
-        image: nginxdemos/hello:0.1 #tags 0.1 , 0.2 and plain-text available 
+        image: nginxdemos/hello:0.1 #tags 0.1 , 0.2 and plain-text available
         ports:
         - name: http
           containerPort: 80
