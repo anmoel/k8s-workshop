@@ -2,58 +2,52 @@
 
 ## 1. Kubernetes Beginner Tag1
 
-Themen:
+Topics:
 ---
 
-- Vorstellung:
-
-    - Core Concepts
-    - Master Components
-
+- Presentation:
+  - Core Concepts
+  - Master Components
 - HandsOn:
+  - Installation kubectl & Minikube
+  - Minikube configuration
+  - Kubectl configuration and usage
+  - Start with Deployments/Pods (Container) and Services
+  - Get status of Deployments/Pods
+  - Rolling-Update
+  - Rollback
+  - Configmaps
+  - Health checks
+  - Ressource-Limits
 
-    - Installation kubectl & Minikube
-    - Minikube configuration
-    - Kubectl configuration and usage
-    - Start with Deployments/Pods (Container) and Services
-    - Get status of Deployments/Pods
-    - Rolling-Update
-    - Rollback
-    - Configmaps
-    - Health checks
-    - Ressource-Limits
-
-
-Voraussetzung:
+Requirements:
 ---
 
-- Verständnis von Docker
+- knowledge of Docker
 
----------------------------------------------------------------------
+---
 
 ## 2. Kubernetes Beginner Tag2
 
-Themen:
+Topics:
 ---
-- Vorstellung:
 
-    - HA Kubernetes Cluster
-
+- Presentation:
+  - HA Kubernetes Cluster
 - HandsOn:
+  - Install with kubeadm
+  - Namespace Quotas
+  - Secrets
+  - Statefulset, Daemonset and CronJob with EFK-Example
+  - Deployment options and PodSecurity
 
-    - Install with kubeadm
-    - Namespace Quotas
-    - Secrets
-    - Statefulset, Daemonset and CronJob with EFK-Example
-    - Deployment options and PodSecurity
-
-Voraussetzung:
+Requirements:
 ---
 
-- Grundkenntnisse von Kubernetes
-- Kubernetes-Cluster in der Cloud oder Minikube installiert
+- Basic knowledge of kubernetes
+- Kubernetes cluster istanlled at one cloud or in minikube
 
----------------------------------------------------------------------
+---
 
 ## Other
 
